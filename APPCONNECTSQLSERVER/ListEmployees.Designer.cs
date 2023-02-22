@@ -60,7 +60,7 @@
             this.dataGridEmployee.Name = "dataGridEmployee";
             this.dataGridEmployee.ReadOnly = true;
             this.dataGridEmployee.RowTemplate.Height = 32;
-            this.dataGridEmployee.Size = new System.Drawing.Size(946, 362);
+            this.dataGridEmployee.Size = new System.Drawing.Size(960, 362);
             this.dataGridEmployee.TabIndex = 0;
             // 
             // Column1
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 384);
+            this.ClientSize = new System.Drawing.Size(985, 384);
             this.Controls.Add(this.dataGridEmployee);
             this.Font = new System.Drawing.Font("Nokora", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

@@ -51,7 +51,7 @@ namespace APPCONNECTSQLSERVER
         public object[] Record()
         {
             return new object[] { 
-                Id, 
+                $"{Id:000}", 
                 FirstName, 
                 LastName, 
                 Gender, 
