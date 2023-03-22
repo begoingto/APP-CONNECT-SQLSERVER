@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertEmployee.Designer.cs">
+      <DependentUpon>InsertEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,16 +72,28 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lottery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lottery.Designer.cs">
+      <DependentUpon>Lottery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertEmployee.resx">
+      <DependentUpon>InsertEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListEmployees.resx">
       <DependentUpon>ListEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lottery.resx">
+      <DependentUpon>Lottery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,6 +117,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8d95e3e3890b4c9ea94ae6704b44b701.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\incodenitor.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar_Cat-512.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

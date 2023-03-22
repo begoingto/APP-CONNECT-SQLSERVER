@@ -104,5 +104,10 @@ namespace APPCONNECTSQLSERVER
             r.Close();
             return employees;
         }
+
+        public override string ToString()
+        {
+            return $"{Id:0000}-{FirstName} {LastName}";
+        }
     }
 }

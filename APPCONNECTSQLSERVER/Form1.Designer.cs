@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnInserEmployee = new System.Windows.Forms.Button();
+            this.btnLottery = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -38,6 +40,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.btnInserEmployee);
+            this.groupBox1.Controls.Add(this.btnLottery);
             this.groupBox1.Controls.Add(this.btnEmployee);
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -46,6 +50,28 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "People";
+            // 
+            // btnInserEmployee
+            // 
+            this.btnInserEmployee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInserEmployee.Location = new System.Drawing.Point(3, 97);
+            this.btnInserEmployee.Name = "btnInserEmployee";
+            this.btnInserEmployee.Size = new System.Drawing.Size(248, 39);
+            this.btnInserEmployee.TabIndex = 3;
+            this.btnInserEmployee.Text = "Insert Employee";
+            this.btnInserEmployee.UseVisualStyleBackColor = true;
+            this.btnInserEmployee.Click += new System.EventHandler(this.btnInserEmployee_Click);
+            // 
+            // btnLottery
+            // 
+            this.btnLottery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLottery.Location = new System.Drawing.Point(3, 58);
+            this.btnLottery.Name = "btnLottery";
+            this.btnLottery.Size = new System.Drawing.Size(248, 39);
+            this.btnLottery.TabIndex = 2;
+            this.btnLottery.Text = "Lottery Employee";
+            this.btnLottery.UseVisualStyleBackColor = true;
+            this.btnLottery.Click += new System.EventHandler(this.btnLottery_Click);
             // 
             // btnEmployee
             // 
@@ -94,6 +120,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnEmployee;
+        private System.Windows.Forms.Button btnLottery;
+        private System.Windows.Forms.Button btnInserEmployee;
     }
 }
 

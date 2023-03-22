@@ -33,5 +33,15 @@ namespace APPCONNECTSQLSERVER
         {
             new ListEmployees().ShowDialog(this);
         }
+
+        private void btnLottery_Click(object sender, EventArgs e)
+        {
+            new Lottery().ShowDialog(this);
+        }
+
+        private void btnInserEmployee_Click(object sender, EventArgs e)
+        {
+            new InsertEmployee().ShowDialog(this);
+        }
     }
 }

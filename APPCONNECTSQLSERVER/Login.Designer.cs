@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(438, 236);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Nokora", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(136, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(213, 26);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Login To BEGOINGTO";
             // 
             // button2
             // 
@@ -97,6 +107,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(287, 25);
             this.txtPassword.TabIndex = 17;
+            this.txtPassword.Text = "123";
             // 
             // label4
             // 
@@ -114,6 +125,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(287, 25);
             this.txtUsername.TabIndex = 15;
+            this.txtUsername.Text = "mich";
             // 
             // label3
             // 
@@ -164,16 +176,6 @@
             this.label1.Size = new System.Drawing.Size(118, 19);
             this.label1.TabIndex = 10;
             this.label1.Text = "Server Name/IP";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Nokora", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(136, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(213, 26);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Login To BEGOINGTO";
             // 
             // Login
             // 

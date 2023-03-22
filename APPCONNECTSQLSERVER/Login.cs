@@ -19,8 +19,8 @@ namespace APPCONNECTSQLSERVER
 
         private void Login_Load(object sender, EventArgs e)
         {
-            txtIP.Text = Environment.MachineName;
-            comboAuthentication.SelectedIndex= 0;
+            txtIP.Text = "Begoingto";
+            comboAuthentication.SelectedIndex= 1;
         }
 
         private void comboAuthentication_SelectedIndexChanged(object sender, EventArgs e)

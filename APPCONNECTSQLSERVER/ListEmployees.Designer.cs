@@ -131,7 +131,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ListEmployees";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListEmployees";
             this.Load += new System.EventHandler(this.ListEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
