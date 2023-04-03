@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace APPCONNECTSQLSERVER
@@ -19,8 +12,10 @@ namespace APPCONNECTSQLSERVER
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.ShowDialog(this);
+            /*Login login = new Login();
+            login.ShowDialog(this);*/
+            this.productControll1.Visible = false;
+            this.listProduct1.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -42,6 +37,29 @@ namespace APPCONNECTSQLSERVER
         private void btnInserEmployee_Click(object sender, EventArgs e)
         {
             new InsertEmployee().ShowDialog(this);
+        }
+
+        private void productControll1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListProduct_Click(object sender, EventArgs e)
+        {
+            if (this.productControll1.Visible)
+            {
+                this.productControll1.Visible = false;
+            }
+            this.listProduct1.Visible = true;
+        }
+
+        private void btnInserProduct_Click(object sender, EventArgs e)
+        {
+            if (this.listProduct1.Visible)
+            {
+                this.listProduct1.Visible = false;
+            }
+            this.productControll1.Visible = true;
         }
     }
 }

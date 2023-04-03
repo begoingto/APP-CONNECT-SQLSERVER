@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Text.RegularExpressions;
+using System.IO;
 
 namespace APPCONNECTSQLSERVER
 {
@@ -27,7 +29,7 @@ namespace APPCONNECTSQLSERVER
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void txtFirstName_KeyPress(object sender, KeyPressEventArgs e)
@@ -100,7 +102,17 @@ namespace APPCONNECTSQLSERVER
             {
                 try
                 {
-                    picture.Image = Image.FromFile(openFileDialog.FileName);
+                    FileInfo fileInfo= new FileInfo(openFileDialog.FileName);
+                    double size = (fileInfo.Length / 1024.0) / 1024.0; // 1024.0 fise byte and 1024.0 kilobyte
+                    if(size > 1)
+                    {
+                        MessageBox.Show("The image file is greater than 1024 byte.", "Error image",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        picture.Image = Image.FromFile(openFileDialog.FileName);
+                    }
                 }
                 catch 
                 {
@@ -144,6 +156,45 @@ namespace APPCONNECTSQLSERVER
                     txtLastName.ForeColor = Color.White;
                 }
 
+                if (stSalary.Length == 0)
+                {
+                    error = true;
+                    errorProvider.SetError(txtSalary, "The salary field is required.");
+                    txtSalary.BackColor = Color.Red;
+                    txtSalary.ForeColor = Color.White;
+                }
+
+                if (!IsValidEmail(email))
+                {
+                    error = true;
+                    errorProvider.SetError(txtEmail, "The email field is invalide.");
+                    txtEmail.BackColor = Color.Red;
+                    txtEmail.ForeColor = Color.White;
+                }else if (Employee.EmailIsExist(email))
+                {
+                    error = true;
+                    errorProvider.SetError(txtEmail, "The email field already exist.");
+                    txtEmail.BackColor = Color.Red;
+                    txtEmail.ForeColor = Color.White;
+                }
+
+                if (address.Length < 5)
+                {
+                    error = true;
+                    errorProvider.SetError(txtAddress, "The salary field is required.");
+                    txtAddress.BackColor = Color.Red;
+                    txtAddress.ForeColor = Color.White;
+                }
+                double salary;
+                if (!error)
+                {
+                    double.TryParse(stSalary, NumberStyles.Currency, CultureInfo.CurrentCulture, out salary);
+                    //double.TryParse(stSalary, NumberStyles.Currency, CultureInfo.InvariantCulture, out salary);
+                    Employee employee = new Employee(firstName,lastName,gender, date, email, salary, address, photo);
+                    employee.Save();
+                    this.Dispose();
+                }
+
             }
             catch (Exception ex)
             {
@@ -151,16 +202,16 @@ namespace APPCONNECTSQLSERVER
             }
         }
 
-        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        private void txtSalary_TextChanged(object sender, EventArgs e)
         {
-            txtFirstName.BackColor= Color.White;
-            txtFirstName.ForeColor= Color.Black;
+            TextBox txt = (TextBox)sender;
+            txt.BackColor = Color.White;
+            txt.ForeColor = Color.Black;
         }
 
-        private void txtLastName_TextChanged(object sender, EventArgs e)
+        public static bool IsValidEmail(string email)
         {
-            txtLastName.BackColor = Color.White;
-            txtLastName.ForeColor = Color.Black;
+            return Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
         }
     }
 }

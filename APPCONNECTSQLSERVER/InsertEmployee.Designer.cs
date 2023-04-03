@@ -59,7 +59,8 @@
             this.txtAddress.Location = new System.Drawing.Point(153, 280);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(239, 25);
-            this.txtAddress.TabIndex = 30;
+            this.txtAddress.TabIndex = 25;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // label5
             // 
@@ -75,7 +76,8 @@
             this.txtSalary.Location = new System.Drawing.Point(154, 237);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(239, 25);
-            this.txtSalary.TabIndex = 28;
+            this.txtSalary.TabIndex = 24;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             this.txtSalary.Enter += new System.EventHandler(this.txtSalary_Enter);
             this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             this.txtSalary.Leave += new System.EventHandler(this.txtSalary_Leave);
@@ -94,7 +96,7 @@
             this.txtEmail.Location = new System.Drawing.Point(153, 187);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(239, 25);
-            this.txtEmail.TabIndex = 26;
+            this.txtEmail.TabIndex = 23;
             // 
             // label7
             // 
@@ -119,8 +121,8 @@
             this.txtLastName.Location = new System.Drawing.Point(514, 70);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(239, 25);
-            this.txtLastName.TabIndex = 20;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
+            this.txtLastName.TabIndex = 19;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirstName_KeyPress);
             // 
             // label2
@@ -147,7 +149,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(239, 25);
             this.txtFirstName.TabIndex = 18;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirstName_KeyPress);
             // 
             // dateOfBirth
@@ -157,7 +159,7 @@
             this.dateOfBirth.Location = new System.Drawing.Point(514, 110);
             this.dateOfBirth.Name = "dateOfBirth";
             this.dateOfBirth.Size = new System.Drawing.Size(239, 25);
-            this.dateOfBirth.TabIndex = 32;
+            this.dateOfBirth.TabIndex = 22;
             // 
             // groupBoxGender
             // 
@@ -177,7 +179,7 @@
             this.rMale.Location = new System.Drawing.Point(230, 24);
             this.rMale.Name = "rMale";
             this.rMale.Size = new System.Drawing.Size(56, 22);
-            this.rMale.TabIndex = 1;
+            this.rMale.TabIndex = 21;
             this.rMale.TabStop = true;
             this.rMale.Text = "Male";
             this.rMale.UseVisualStyleBackColor = true;
@@ -188,7 +190,7 @@
             this.rFemale.Location = new System.Drawing.Point(88, 24);
             this.rFemale.Name = "rFemale";
             this.rFemale.Size = new System.Drawing.Size(72, 22);
-            this.rFemale.TabIndex = 0;
+            this.rFemale.TabIndex = 20;
             this.rFemale.Text = "Female";
             this.rFemale.UseVisualStyleBackColor = true;
             // 

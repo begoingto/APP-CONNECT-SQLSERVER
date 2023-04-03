@@ -16,7 +16,7 @@ namespace APPCONNECTSQLSERVER
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InsertEmployee());
+            Application.Run(new Form1());
         }
     }
 }

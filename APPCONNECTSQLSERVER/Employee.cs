@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace APPCONNECTSQLSERVER
 {
@@ -24,6 +25,18 @@ namespace APPCONNECTSQLSERVER
         public Employee()
         {
 
+        }
+
+        public Employee(string firstName, string lastName, string gender, DateTime dateOfBirth, string email, double salary, string address, Image photo)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Gender = gender;
+            DateOfBirth = dateOfBirth;
+            Email = email;
+            Salary = salary;
+            Address = address;
+            Photo = photo;
         }
 
         public Employee(
@@ -55,7 +68,7 @@ namespace APPCONNECTSQLSERVER
                 FirstName, 
                 LastName, 
                 Gender, 
-                $"{DateOfBirth:dd-MM-yy}",
+                $"{DateOfBirth:dd-MM-yyyy}",
                 Email, 
                 $"{Salary:c2}",
                 Address,
@@ -67,7 +80,7 @@ namespace APPCONNECTSQLSERVER
         {
             List<Employee> employees = new List<Employee>();
 
-            string sql = "SELECT * FROM ss20.dbo.tblEmployee;";
+            string sql = "SELECT * FROM ss20.dbo.tblEmployee ORDER BY id DESC;";
 
             SqlCommand s = new SqlCommand(sql, DataConnect.DataCon);
             SqlDataReader r = s.ExecuteReader();
@@ -108,6 +121,39 @@ namespace APPCONNECTSQLSERVER
         public override string ToString()
         {
             return $"{Id:0000}-{FirstName} {LastName}";
+        }
+
+
+        internal void Save()
+        {
+            string insertQuery = "INSERT INTO ss20.dbo.tblEmployee (first_name, last_name, gender, date_of_birth, email, salary, address, photo) VALUES (@first_name, @last_name, @gender, @date_of_birth, @email, @salary, @address,@photo)";
+
+            SqlCommand command = new SqlCommand(insertQuery, DataConnect.DataCon);
+            command.Parameters.AddWithValue("@first_name", FirstName);
+            command.Parameters.AddWithValue("@last_name", LastName);
+            command.Parameters.AddWithValue("@gender", Gender);
+            command.Parameters.AddWithValue("@date_of_birth", DateOfBirth.ToString("yyyy-MM-dd"));
+            command.Parameters.AddWithValue("@email", Email);
+            command.Parameters.AddWithValue("@salary", Salary);
+            command.Parameters.AddWithValue("@address", Address);
+            MemoryStream stream= new MemoryStream();
+            Photo.Save(stream,Photo.RawFormat);
+            command.Parameters.AddWithValue("@photo", stream.ToArray());
+
+            int rowsAffected = command.ExecuteNonQuery();
+            MessageBox.Show($"{rowsAffected} rows inserted.");
+        }
+
+        internal static bool EmailIsExist(string email)
+        {
+            string sql = $"SELECT email FROM ss20.dbo.tblEmployee where email=@email;";
+            SqlCommand s = new SqlCommand(sql, DataConnect.DataCon);
+            s.Parameters.AddWithValue("email", email);
+            SqlDataReader r = s.ExecuteReader();
+            bool isExist = r.Read();
+            r.Close();
+            s.Dispose();
+            return isExist;
         }
     }
 }
