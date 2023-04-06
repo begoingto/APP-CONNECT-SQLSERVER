@@ -75,8 +75,8 @@ namespace APPCONNECTSQLSERVER
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-             MessageBox.Show($"Product Infor => ID:{ID} Name: {PName}, Price: {Price:c2}");
-            /*Qty++;
+            //MessageBox.Show($"Product Infor => ID:{ID} Name: {PName}, Price: {Price:c2}");
+            Qty++;
             btnOrder.Text = $"Order({Qty})";
             btnCancel.Visible = true;
             int index =CheckID(ID);
@@ -88,7 +88,7 @@ namespace APPCONNECTSQLSERVER
             {
                 Rows[index].Cells[2].Value = Qty;
                 Rows[index].Cells[4].Value = $"{Qty * Price:c2}";
-            }*/
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

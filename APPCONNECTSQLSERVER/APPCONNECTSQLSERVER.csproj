@@ -103,6 +103,18 @@
     <Compile Include="Lottery.Designer.cs">
       <DependentUpon>Lottery.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageProduct.Designer.cs">
+      <DependentUpon>ManageProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +127,19 @@
     <Compile Include="ProductControll.Designer.cs">
       <DependentUpon>ProductControll.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductGridView.Designer.cs">
+      <DependentUpon>ProductGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -135,11 +160,23 @@
     <EmbeddedResource Include="Lottery.resx">
       <DependentUpon>Lottery.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageProduct.resx">
+      <DependentUpon>ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductControll.resx">
       <DependentUpon>ProductControll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductGridView.resx">
+      <DependentUpon>ProductGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Avatar_Cat-512.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

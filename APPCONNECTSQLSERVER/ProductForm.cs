@@ -12,11 +12,28 @@ using System.Windows.Forms;
 
 namespace APPCONNECTSQLSERVER
 {
-    public partial class ProductControll : UserControl
+    public partial class ProductForm : Form
     {
-        public ProductControll()
+        public int productId;
+        public string frmEvent="";
+        public string data;
+        public Image photo;
+        public ProductForm()
         {
             InitializeComponent();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.clearTextBox();
+        }
+
+        public void clearTextBox()
+        {
+            txtProductName.Text = string.Empty;
+            txtProductPrice.Text = string.Empty;
+            txtStockIn.Text = string.Empty;
+            picture.Image = global::APPCONNECTSQLSERVER.Properties.Resources.Avatar_Cat_512;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -26,9 +43,7 @@ namespace APPCONNECTSQLSERVER
                 string name = txtProductName.Text.Trim();
                 string stPrice = txtProductPrice.Text.Trim();
                 string instock = txtStockIn.Text.Trim();
-                Image photo = picture.Image;
-
-
+                this.photo = picture.Image;
                 bool error = false;
 
                 if (name.Length < 2)
@@ -55,17 +70,22 @@ namespace APPCONNECTSQLSERVER
                     txtStockIn.ForeColor = Color.White;
                 }
                 double price = 0;
-                if (!error)
+                if (!error && productId==0)
                 {
                     double.TryParse(stPrice, NumberStyles.Currency, CultureInfo.CurrentCulture, out price);
-                    ProductItem productItem = new ProductItem(name,price,int.Parse(instock),photo);
-                    productItem.Save();
-                    txtProductName.Text=string.Empty;
-                    txtProductPrice.Text = string.Empty;
-                    txtStockIn.Text = string.Empty;
-                    //picture.Image = ;
+                    /*ProductItem productItem = new ProductItem(name, price, int.Parse(instock), photo);
+                    productItem.Save();*/
+                    this.frmEvent = "closingSaved";
+                    this.data = $"{name},{price},{int.Parse(instock)}";
+                    this.Close();
                 }
-
+                else
+                {
+                    double.TryParse(stPrice, NumberStyles.Currency, CultureInfo.CurrentCulture, out price);
+                    this.frmEvent = "closingUpdated";
+                    this.data = $"{name},{price},{int.Parse(instock)}";
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -100,6 +120,58 @@ namespace APPCONNECTSQLSERVER
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar)
+                && !char.IsWhiteSpace(e.KeyChar)
+                && !char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8)
+            {
+                string text = txtProductPrice.Text.Trim();
+                if (e.KeyChar == '.')
+                {
+                    if (text.Length == 0)
+                    {
+                        txtProductPrice.Text = "0.";
+                        txtProductPrice.SelectionStart = 2;
+                        e.Handled = true;
+                    }
+                    else
+                    {
+                        if (text.Contains('.'))
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void txtStockIn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar)
+                && !char.IsControl(e.KeyChar)
+                && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

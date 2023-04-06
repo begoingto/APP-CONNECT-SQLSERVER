@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace APPCONNECTSQLSERVER
         {
             InitializeComponent();
 
-            string[] fileName = Directory.GetFiles("D:\\_semesterII\\C#\\POS_System\\Image");
+            /*string[] fileName = Directory.GetFiles("D:\\_semesterII\\C#\\POS_System\\Image");
             int id = 1;
             int c = 0, row = 0;
             Random r = new Random();
@@ -40,7 +41,12 @@ namespace APPCONNECTSQLSERVER
                     c = 1;
                     row++;
                 }
-            }
+            }*/
+           
+        }
+        public TableLayoutControlCollection tableLayoutProduct
+        {
+            get => tableLayoutPanel.Controls;
         }
     }
 }

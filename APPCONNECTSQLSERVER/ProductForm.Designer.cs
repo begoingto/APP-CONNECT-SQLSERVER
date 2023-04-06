@@ -1,13 +1,13 @@
 ﻿namespace APPCONNECTSQLSERVER
 {
-    partial class ProductControll
+    partial class ProductForm
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,17 +20,17 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.btnSave = new MaterialSkin.Controls.MaterialButton();
             this.label3 = new System.Windows.Forms.Label();
             this.picture = new System.Windows.Forms.PictureBox();
@@ -50,7 +50,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialButton1);
+            this.materialCard1.Controls.Add(this.btnClear);
             this.materialCard1.Controls.Add(this.btnSave);
             this.materialCard1.Controls.Add(this.label3);
             this.materialCard1.Controls.Add(this.picture);
@@ -63,34 +63,35 @@
             this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(14, 14);
+            this.materialCard1.Location = new System.Drawing.Point(13, 11);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(639, 525);
-            this.materialCard1.TabIndex = 9;
+            this.materialCard1.TabIndex = 10;
             // 
-            // materialButton1
+            // btnClear
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(60, 451);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.materialButton1.Size = new System.Drawing.Size(100, 36);
-            this.materialButton1.TabIndex = 39;
-            this.materialButton1.Text = "Clear";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = true;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btnClear.AutoSize = false;
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
+            this.btnClear.Location = new System.Drawing.Point(67, 451);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClear.Name = "btnClear";
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.btnClear.Size = new System.Drawing.Size(100, 36);
+            this.btnClear.TabIndex = 39;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = true;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -117,15 +118,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 271);
+            this.label3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(58, 261);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 18);
+            this.label3.Size = new System.Drawing.Size(65, 23);
             this.label3.TabIndex = 37;
             this.label3.Text = "Photo:";
             // 
             // picture
             // 
             this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picture.Image = global::APPCONNECTSQLSERVER.Properties.Resources.Avatar_Cat_512;
             this.picture.Location = new System.Drawing.Point(296, 261);
             this.picture.Name = "picture";
@@ -174,13 +177,14 @@
             this.txtStockIn.TrailingIcon = null;
             this.txtStockIn.UseSystemPasswordChar = false;
             this.txtStockIn.UseTallSize = false;
+            this.txtStockIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockIn_KeyPress);
             // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(98, 220);
+            this.materialLabel3.Location = new System.Drawing.Point(61, 220);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(62, 19);
@@ -216,6 +220,7 @@
             this.txtProductPrice.TrailingIcon = null;
             this.txtProductPrice.UseSystemPasswordChar = false;
             this.txtProductPrice.UseTallSize = false;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductPrice_KeyPress);
             // 
             // materialLabel2
             // 
@@ -258,6 +263,7 @@
             this.txtProductName.TrailingIcon = null;
             this.txtProductName.UseSystemPasswordChar = false;
             this.txtProductName.UseTallSize = false;
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // materialLabel1
             // 
@@ -275,15 +281,17 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // ProductControll
+            // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(664, 547);
             this.Controls.Add(this.materialCard1);
-            this.Font = new System.Drawing.Font("Nokora", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ProductControll";
-            this.Size = new System.Drawing.Size(662, 551);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ProductForm";
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
@@ -293,18 +301,19 @@
         }
 
         #endregion
+
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialTextBox2 txtStockIn;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialTextBox2 txtProductPrice;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialTextBox2 txtProductName;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialButton btnClear;
+        public MaterialSkin.Controls.MaterialButton btnSave;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox picture;
-        private MaterialSkin.Controls.MaterialButton btnSave;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        public System.Windows.Forms.PictureBox picture;
+        private System.Windows.Forms.Label label1;
+        public MaterialSkin.Controls.MaterialTextBox2 txtStockIn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        public MaterialSkin.Controls.MaterialTextBox2 txtProductPrice;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        public MaterialSkin.Controls.MaterialTextBox2 txtProductName;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
